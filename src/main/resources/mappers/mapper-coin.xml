@@ -11,7 +11,30 @@
 
 	<select id="selectCoinbyCoinName" resultType="com.upbit.coin.vo.Coin" parameterType="com.upbit.coin.vo.Coin">
 
-		SELECT COIN_NAME, PRICE, UPDATE_DATE FROM COIN WHERE COIN_NAME = 'ETH'
+		SELECT COIN_NAME, PRICE, UPDATE_DATE FROM COIN WHERE COIN_NAME = #{coin_name}
+
+	</select>
+
+	<select id="updateCoinbyCoinInfo" parameterType="com.upbit.coin.vo.Coin">
+
+		UPDATE COIN
+		SET PRICE = #{price}, 
+				UPDATE_DATE = sysdate
+		WHERE COIN_NAME = #{coin_name}
+
+	</select>
+
+	<select id="insertCoinbyCoinInfo" parameterType="com.upbit.coin.vo.Coin">
+
+		INSERT INTO COIN (COIN_NAME, PRICE, UPDATE_DATE) VALUES 
+		(#{coin_name}, #{price}, sysdate)
+
+	</select>
+
+	<select id="deleteCoinbyCoinInfo" parameterType="com.upbit.coin.vo.Coin">
+
+		DELETE COIN
+		WHERE COIN_NAME = #{coin_name}
 
 	</select>
 

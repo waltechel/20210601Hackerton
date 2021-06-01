@@ -13,4 +13,10 @@ public interface CoinRepository {
 
 	Coin selectCoinbyCoinName(Coin coin);
 
+	void updateCoinbyCoinInfo(Coin coin);
+
+	void insertCoinbyCoinInfo(Coin coin);
+
+	void deleteCoinbyCoinInfo(Coin coin);
+
 }

@@ -11,4 +11,10 @@ public interface CoinService {
 
 	Coin searchCoin(Map<String, Object> params);
 
+	Coin updateCoin(Map<String, Object> params);
+
+	Coin insertCoin(Map<String, Object> params);
+
+	void deleteCoin(Map<String, Object> params);
+
 }

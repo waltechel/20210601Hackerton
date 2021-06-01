@@ -26,14 +26,49 @@ public class CoinController {
 	
 	@GetMapping("/api/coin/search")
 	public ResponseEntity<?> searchCoin(@RequestParam Map<String, Object> params){
-		System.out.println("controller : params : " + params.toString());
+//		System.out.println("controller : params : " + params.toString());
 		Coin coin = service.searchCoin(params);
-		System.out.println("controller > coin : " + coin.toString());
+//		System.out.println("controller > coin : " + coin.toString());
 		if(coin != null) {
 			return ResponseEntity.ok(coin);
 		}else {
 			return ResponseEntity.badRequest().body(coin);
 		}
 		
+	}
+	
+	@GetMapping("/api/coin/update")
+	public ResponseEntity<?> updateCoin(@RequestParam Map<String, Object> params){
+//		System.out.println("controller : params : " + params.toString());
+		Coin coin = service.updateCoin(params);
+//		System.out.println("controller > coin : " + coin.toString());
+		if(coin != null) {
+			return ResponseEntity.ok(coin);
+		}else {
+			return ResponseEntity.badRequest().body(coin);
+		}
+		
+	}
+	
+	@GetMapping("/api/coin/insert")
+	public ResponseEntity<?> insertCoin(@RequestParam Map<String, Object> params){
+//		System.out.println("controller : params : " + params.toString());
+		Coin coin = service.insertCoin(params);
+//		System.out.println("controller > coin : " + coin.toString());
+		if(coin != null) {
+			return ResponseEntity.ok(coin);
+		}else {
+			return ResponseEntity.badRequest().body(coin);
+		}
+		
+	}
+	
+	@GetMapping("/api/coin/delete")
+	public ResponseEntity<?> deleteCoin(@RequestParam Map<String, Object> params){
+//		System.out.println("controller : params : " + params.toString());
+		service.deleteCoin(params);
+//		System.out.println("controller > coin : " + coin.toString());
+		return ResponseEntity.ok(null);
+				
 	}
 }

@@ -35,6 +35,7 @@
         <a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a>
       </li>
     </ul>
+		<b-button variant="primary" @click="goToCoinPage">코인 페이지로 넘어갑니다.... 저를 눌러주세요!</b-button>
   </div>
 </template>
 
@@ -45,7 +46,12 @@
       return {
         msg: "Welcome to Your Vue.js App"
       };
-    }
+		},
+		methods: {
+			goToCoinPage: function(){
+				this.$router.push("/coin")
+			}
+		}
   };
 </script>
 

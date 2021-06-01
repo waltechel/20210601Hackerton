@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
+    <!-- 중괄호 두 개를 넣어서 변숫값을 불러올 수 있습니다. -->
     <h1>{{ msg }}</h1>
     <h2>CoinMain page</h2>
+    <!-- 여기가 부트스트랩뷰(BootstrapVue)를 활용한 부분이에요! -->
     <b-table striped hover :items="items" v-model="items"></b-table>
     <div>
       <b-button variant="primary" @click="searchAllCoin">모든 코인 조회</b-button>
@@ -28,12 +30,12 @@
     data() {
       return {
         msg: "this is hello world page",
-				items: [],
-				params:{
-					coinName: "",
-					price: "",
-					updateDate: ""
-				}
+        items: [],
+        params: {
+          coinName: "",
+          price: "",
+          updateDate: ""
+        }
       };
     },
     // 해당 뷰 페이지 가 생성되었을 때 나타나는 작업
@@ -56,15 +58,19 @@
           });
       },
       searchCoinByCoinName: function() {
+        if (this.params.coinName == undefined || this.params.coinName == "") {
+          alert("코인 이름을 입력해주세요!");
+          return;
+        }
         this.$axios
-					.get("/api/coin/search",{
-						params: this.params
-					})
+          .get("/api/coin/search", {
+            params: this.params
+          })
           .then(data => {
-						debugger;
+            debugger;
             console.log(data);
-						this.items = [];
-						this.items.push(data.data);
+            this.items = [];
+            this.items.push(data.data);
           })
           .catch(error => {
             alert(error);
@@ -73,6 +79,72 @@
             // alert("finally is called");
           });
       },
+      updateCoinByCoinName: function() {
+        if (this.params.coinName == undefined || this.params.coinName == "") {
+          alert("코인 이름을 입력해주세요!");
+          return;
+        }
+        if (this.params.price == undefined || this.params.price == "") {
+          alert("코인 가격을 입력해주세요!");
+          return;
+        }
+        this.$axios
+          .get("/api/coin/update", {
+            params: this.params
+          })
+          .then(data => {
+            this.searchCoinByCoinName();
+          })
+          .catch(error => {
+            alert(error);
+          })
+          .finally(() => {
+            // alert("finally is called");
+          });
+      },
+      insertCoinByCoinName: function() {
+        if (this.params.coinName == undefined || this.params.coinName == "") {
+          alert("코인 이름을 입력해주세요!");
+          return;
+        }
+        if (this.params.price == undefined || this.params.price == "") {
+          alert("코인 가격을 입력해주세요!");
+          return;
+        }
+        this.$axios
+          .get("/api/coin/insert", {
+            params: this.params
+          })
+          .then(data => {
+            this.searchCoinByCoinName();
+          })
+          .catch(error => {
+            alert(error);
+          })
+          .finally(() => {
+            // alert("finally is called");
+          });
+			},
+			deleteCoinByCoinName: function(){
+					if (this.params.coinName == undefined || this.params.coinName == "") {
+          alert("코인 이름을 입력해주세요!");
+          return;
+        }
+        this.$axios
+          .get("/api/coin/delete", {
+            params: this.params
+          })
+          .then(data => {
+						alert("삭제되었습니다!");
+						this.items = [];
+          })
+          .catch(error => {
+            alert(error);
+          })
+          .finally(() => {
+            // alert("finally is called");
+          });
+			},
       goToMainPage: function() {
         this.$router.push("/");
       }

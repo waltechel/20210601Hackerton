@@ -27,8 +27,35 @@ public class CoinServiceImpl implements CoinService {
 	public Coin searchCoin(Map<String, Object> param) {
 		Coin coin = new Coin();
 		coin.setCoin_name((String) param.get("coinName"));
-		System.out.println("CoinserviceImpl : " + coin.toString());
+//		System.out.println("CoinserviceImpl : " + coin.toString());
 		return repo.selectCoinbyCoinName(coin);
+	}
+
+	@Override
+	public Coin updateCoin(Map<String, Object> params) {
+		Coin coin = new Coin();
+		coin.setCoin_name((String) params.get("coinName"));
+		coin.setPrice(Double.parseDouble((String) params.get("price")));
+		repo.updateCoinbyCoinInfo(coin);
+//		System.out.println("CoinserviceImpl : " + coin.toString());
+		return repo.selectCoinbyCoinName(coin);
+	}
+
+	@Override
+	public Coin insertCoin(Map<String, Object> params) {
+		Coin coin = new Coin();
+		coin.setCoin_name((String) params.get("coinName"));
+		coin.setPrice(Double.parseDouble((String) params.get("price")));
+		repo.insertCoinbyCoinInfo(coin);
+		return repo.selectCoinbyCoinName(coin);
+	}
+
+	@Override
+	public void deleteCoin(Map<String, Object> params) {
+		Coin coin = new Coin();
+		coin.setCoin_name((String) params.get("coinName"));
+		coin.setPrice(Double.parseDouble((String) params.get("price")));
+		repo.deleteCoinbyCoinInfo(coin);
 	}
 
 }
