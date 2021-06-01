@@ -2,6 +2,18 @@
 * Spring boot, Mybatis(Oracle), Vue.js, BootStrapVue를 활용한 해커톤 프로젝트 기초 샘플 프로젝트
 
 ---
+### 시스템 실행하는 방법
+#### git으로 해당 레포지토리를 받아옵니다.
+1. git clone https://github.com/waltechel/20210601Hackerton.git
+#### spring boot 서버를 동작시킵니다.
+2. /src/main/java/com/upbit/coin/Application.java 파일 실행
+#### npm 서버를 동작시킵니다.
+3. cd src/webapp
+4. npm install
+5. npm start
+#### http://localhost:4200 에서 동작을 확인합니다.
+
+---
 ### 기술스택
 * Spring boot(Spring 4 이상)
 * Mybatis
