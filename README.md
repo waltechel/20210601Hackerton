@@ -16,6 +16,42 @@
 * codemix
 * Spring Tools 3 STS 또는 해당 스펙을 갖춘 eclipse
 * npm(node.js)
+* postman
+* sqldeveloper
+
+---
+### Spring boot 라이브러리 
+* Lombok
+* Spring boot devtools
+* Spring Web
+* Mybatis
+* Oracle Driver
+
+---
+### 오라클 사용하기 위한 테이블 명령어 및 기본 데이터 주입 쿼리
+```oracle
+
+DROP TABLE COIN;
+
+CREATE TABLE COIN(
+    COIN_NAME VARCHAR(100) NOT NULL PRIMARY KEY,
+    PRICE NUMBER NOT NULL,
+    UPDATE_DATE DATE DEFAULT SYSDATE NOT NULL
+);
+
+INSERT INTO COIN (COIN_NAME, PRICE, UPDATE_DATE) VALUES ('BIT', 50000000, SYSDATE);
+
+INSERT INTO COIN (COIN_NAME, PRICE, UPDATE_DATE) VALUES ('ETH', 2000000, SYSDATE);
+
+INSERT INTO COIN (COIN_NAME, PRICE, UPDATE_DATE) VALUES ('XRP', 1000, SYSDATE);
+
+INSERT INTO COIN (COIN_NAME, PRICE, UPDATE_DATE) VALUES ('EOS', 500, SYSDATE);
+
+INSERT INTO COIN (COIN_NAME, PRICE, UPDATE_DATE) VALUES ('DONGJUN', 500000000, SYSDATE);
+
+COMMIT;
+
+```
 
 ---
 ### Vue.js 프로젝트를 만들기 위한 명령어 모음
@@ -87,3 +123,7 @@ Vue.use(IconsPlugin)
 
 * Spring boot initializer
 	* https://start.spring.io/
+
+* postman
+	* restapi 개발을 위한 웹 사이트
+	* https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=ko	
