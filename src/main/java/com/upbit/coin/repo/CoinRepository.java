@@ -11,4 +11,6 @@ public interface CoinRepository {
 
 	ArrayList<Coin> selectAllCoins();
 
+	Coin selectCoinbyCoinName(Coin coin);
+
 }

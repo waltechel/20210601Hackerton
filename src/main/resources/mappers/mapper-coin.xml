@@ -9,4 +9,10 @@
 
 	</select>
 
+	<select id="selectCoinbyCoinName" resultType="com.upbit.coin.vo.Coin" parameterType="com.upbit.coin.vo.Coin">
+
+		SELECT COIN_NAME, PRICE, UPDATE_DATE FROM COIN WHERE COIN_NAME = 'ETH'
+
+	</select>
+
 </mapper>

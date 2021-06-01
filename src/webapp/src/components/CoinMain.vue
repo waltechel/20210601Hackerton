@@ -4,10 +4,18 @@
     <h2>CoinMain page</h2>
     <b-table striped hover :items="items" v-model="items"></b-table>
     <div>
-      <b-button @click="searchAllCoin">Button</b-button>
-      <b-button variant="danger">Button</b-button>
-      <b-button variant="success">Button</b-button>
-      <b-button variant="outline-primary">Button</b-button>
+      <b-button variant="primary" @click="searchAllCoin">모든 코인 조회</b-button>
+      <b-button variant="secondary" @click="searchCoinByCoinName">특정 코인 조회</b-button>
+      <b-button variant="dark" @click="updateCoinByCoinName">업데이트</b-button>
+      <b-button variant="success" @click="insertCoinByCoinName">추가</b-button>
+      <b-button variant="danger" @click="deleteCoinByCoinName">삭제</b-button>
+      <b-button variant="outline-primary" @click="goToMainPage">메인 페이지로 넘어가기</b-button>
+    </div>
+    <div>
+      <span>
+        <b-form-input v-model="params.coinName" placeholder="코인 이름을 입력하세요"></b-form-input>
+        <b-form-input v-model="params.price" placeholder="코인 가격을 입력하세요"></b-form-input>
+      </span>
     </div>
   </div>
 </template>
@@ -20,31 +28,55 @@
     data() {
       return {
         msg: "this is hello world page",
-        items: []
+				items: [],
+				params:{
+					coinName: "",
+					price: "",
+					updateDate: ""
+				}
       };
     },
     // 해당 뷰 페이지 가 생성되었을 때 나타나는 작업
     created() {},
     // 해당 뷰 페이지가 마운트 되었을 때 나타나는 작업
     methods: {
-			searchAllCoin: function(){
-				// debugger;
-				alert("searchAllCoin method is called");
-				this.$axios.get("/api/coin/searchAll")
-				.then((data) => {
-					debugger;
-					console.log(data)
-					// alert(data)
-					this.items = data.data
-				})
-				.catch((error) => {
-					alert(error);
-				})
-				.finally(() => {
-					alert("finally is called");
-				});
-			}
-		}
+      searchAllCoin: function() {
+        this.$axios
+          .get("/api/coin/searchAll")
+          .then(data => {
+            debugger;
+            console.log(data);
+            this.items = data.data;
+          })
+          .catch(error => {
+            alert(error);
+          })
+          .finally(() => {
+            // alert("finally is called");
+          });
+      },
+      searchCoinByCoinName: function() {
+        this.$axios
+					.get("/api/coin/search",{
+						params: this.params
+					})
+          .then(data => {
+						debugger;
+            console.log(data);
+						this.items = [];
+						this.items.push(data.data);
+          })
+          .catch(error => {
+            alert(error);
+          })
+          .finally(() => {
+            // alert("finally is called");
+          });
+      },
+      goToMainPage: function() {
+        this.$router.push("/");
+      }
+    }
   };
 </script>
 
