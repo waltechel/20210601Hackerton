@@ -152,6 +152,7 @@ Vue.use(IconsPlugin)
 
 * 스프링 부트 퀵스타트(채규태, 루비페이퍼, 2019)
 	* https://www.aladin.co.kr/m/mproduct.aspx?ItemId=195446636
+	* 117쪽 까지의 내용이 반영되었으며, 해당 프로젝트는 JPA를 쓰지 않았으므로 그 이후의 내용은 반영되지 않았습니다.
 
 * 코드로 배우는 스프링 웹 프로젝트(구멍가게 코딩단, 남가람북스, 2020)
 	* https://www.aladin.co.kr/m/mproduct.aspx?ItemId=258087170

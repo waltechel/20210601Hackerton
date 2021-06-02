@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.upbit.coin.service.CoinService;
 import com.upbit.coin.vo.Coin;
 
+/**
+ * @RestController
+ * @author leedongjun
+ * View를 별도로 만들지 않는 대신 컨트롤러 메서드가 리턴한 데이터를 리턴
+ * REST API
+ */
 @RestController
 public class CoinController {
 	
