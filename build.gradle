@@ -22,12 +22,16 @@ repositories {
 }
 
 dependencies {
+	// 웹 개발에 필요한 스프링 MVC 관련 라이브러리
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// 마이바티스 설정
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
+	// Lombok 설정
 	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	// spring devtools 관련 설정
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
-	annotationProcessor 'org.projectlombok:lombok'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

@@ -139,3 +139,22 @@ Vue.use(IconsPlugin)
 * postman
 	* restapi 개발을 위한 웹 사이트
 	* https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=ko	
+
+---
+### 참고 자료
+#### ※ 해당 내용에 대해서는 저작권과 관련하므로 절대 수정 불가하며, fork 및 재사용 시 절대 수정하지 마십시오.
+
+* 다음 책들의 내용을 프로젝트에 중간 중간 주석으로 달아 학생들의 해커톤 멘토링에 필요한 자료를 구성했음을 밝힙니다. 
+* 프로젝트의 내용에 대해 原 저자 및 출판사의 별도 요청이 있을 시 레포지토리를 private하게 닫거나 저작권과 관련한 내용을 수정할 수 있습니다. 
+
+* Vue.js 퀵 스타트(원형섭, 루비페이퍼, 2017)
+	* https://www.aladin.co.kr/m/mproduct.aspx?ItemId=116453349
+
+* 스프링 부트 퀵스타트(채규태, 루비페이퍼, 2019)
+	* https://www.aladin.co.kr/m/mproduct.aspx?ItemId=195446636
+
+* 코드로 배우는 스프링 웹 프로젝트(구멍가게 코딩단, 남가람북스, 2020)
+	* https://www.aladin.co.kr/m/mproduct.aspx?ItemId=258087170
+
+* 실전! 스프링 5와 Vue.js 2로 시작하는 모던 웹 애플리케이션 개발(제임스 J.예 지음, 김현만, 권봉혁, 변준석 옮김, 위키북스, 2020)
+	* https://www.aladin.co.kr/m/mproduct.aspx?ItemId=227128459
