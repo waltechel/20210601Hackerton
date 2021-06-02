@@ -4,6 +4,7 @@
     <h1>{{ msg }}</h1>
     <h2>CoinMain page</h2>
     <!-- 여기가 부트스트랩뷰(BootstrapVue)를 활용한 부분이에요! -->
+		<!-- v-model을 이용해서 양방향 데이터 렌더링을 구현 -->
     <b-table striped hover :items="items" v-model="items"></b-table>
     <div>
       <b-button variant="primary" @click="searchAllCoin">모든 코인 조회</b-button>
@@ -37,10 +38,17 @@
           updateDate: ""
         }
       };
-    },
+		},
+		/**
+		 * Vue instance life cycle
+		 * 1. created : Vue instance가 생성
+		 * 2. mounted : 데이터가 마운트된 후에 호출
+		 * 3. destroyed : Vue instance가 삭제된 이후에 호
+		 */
     // 해당 뷰 페이지 가 생성되었을 때 나타나는 작업
     created() {},
-    // 해당 뷰 페이지가 마운트 되었을 때 나타나는 작업
+		// 해당 뷰 페이지가 마운트 되었을 때 나타나는 작업
+		mounted() {},
     methods: {
       searchAllCoin: function() {
         this.$axios
