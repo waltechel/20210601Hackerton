@@ -49,7 +49,7 @@
 		},
 		methods: {
 			goToCoinPage: function(){
-				this.$router.push("/coin")
+				this.$router.push("/coinManage")
 			}
 		}
   };
