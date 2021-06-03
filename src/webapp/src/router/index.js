@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import CoinMain from '@/components/CoinMain'
+import CoinManage from '@/components/CoinManage'
+import BuyCoin from '@/components/BuyCoin'
 
 Vue.use(Router)
 
@@ -14,9 +15,14 @@ export default new Router({
       component: HelloWorld
 		},
 		{
-      path: '/coin',
-      name: 'CoinMain',
-      component: CoinMain
-    }
+      path: '/coinManage',
+      name: 'CoinManage',
+      component: CoinManage
+		},
+		{
+			path: '/buyCoin',
+			name: 'buyCoin',
+			component: BuyCoin
+		}
   ]
 })

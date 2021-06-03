@@ -13,6 +13,7 @@
       <b-button variant="success" @click="insertCoinByCoinName">추가</b-button>
       <b-button variant="danger" @click="deleteCoinByCoinName">삭제</b-button>
       <b-button variant="outline-primary" @click="goToMainPage">메인 페이지로 넘어가기</b-button>
+			<b-button variant="outline-primary" @click="goToBuyPage">구매 페이지로 넘어가기</b-button>
     </div>
     <div>
       <span>
@@ -25,7 +26,7 @@
 
 <script>
   export default {
-    name: "CoinMain",
+    name: "CoinManage",
     // 컴포넌트들이 들어가는 부분
     components: {},
     data() {
@@ -155,6 +156,9 @@
 			},
       goToMainPage: function() {
         this.$router.push("/");
+			},
+			goToBuyPage: function() {
+        this.$router.push("/buyCoin");
       }
     }
   };
