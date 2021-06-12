@@ -110,6 +110,18 @@ Vue.prototype.$http = axios
 ```    
 
 ---
+### Vue router 사용
+* src/webapp/src/main.js 파일에 다음 문장 작성함으로써 router.js 파일에 vue-router를 사용할 수 있는 설정을 기록하도록 만듦
+```javascript
+import router from './router'
+```
+* src/webapp/src/router/index.js 파일에 내용을 작성함으로써 router.js 파일을 사용할 수 있도록 만듦
+```javascript
+import Router from 'vue-router'
+Vue.use(Router)
+
+```
+---
 ### BootstrapVue 사용
 * src/webapp/src/main.js 에 다음 문장 작성함으로써 BootstrapVue를 사용 가능하도록 설정
 ```javascript

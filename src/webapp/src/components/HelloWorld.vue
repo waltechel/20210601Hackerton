@@ -49,6 +49,7 @@
 		},
 		methods: {
 			goToCoinPage: function(){
+				//vue-router
 				this.$router.push("/coinManage")
 			}
 		}
