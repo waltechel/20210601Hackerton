@@ -64,7 +64,7 @@
           })
           .finally(() => {
             // alert("finally is called");
-          });
+					});
       },
       searchCoinByCoinName: function() {
         if (this.params.coinName == undefined || this.params.coinName == "") {
