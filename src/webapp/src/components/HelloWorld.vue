@@ -35,7 +35,8 @@
         <a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a>
       </li>
     </ul>
-		<b-button variant="primary" @click="goToCoinPage">코인 페이지로 넘어갑니다.... 저를 눌러주세요!</b-button>
+		<b-button variant="primary" @click="goToCoinPage">코인 페이지</b-button>
+		<b-button variant="primary" @click="goToSlotMainPage">슬롯 연습 페이지</b-button>
   </div>
 </template>
 
@@ -51,6 +52,9 @@
 			goToCoinPage: function(){
 				//vue-router
 				this.$router.push("/coinManage")
+			},
+			goToSlotMainPage: function(){
+				this.$router.push("/slotMain")
 			}
 		}
   };
